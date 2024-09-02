@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TimeTracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application","data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to 'Companies',companies_path %></li>
+        <li><%= link_to 'Projects',projects_path %></li>
+        <li><%= link_to 'Works',works_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <section id ="main">
+    <article>
+      <%= yield %>
+    </article>
+    <aside>
+      <%= user_logged_in_msg %>
+      <%= yield :aside %>
+    </aside>
+  </section>
+  <footer>
+    <p> Time tracker is a <em> Sample Company</em> App</p>
+  </footer>
+</div>
+</body>
+</html>
